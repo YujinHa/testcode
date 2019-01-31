@@ -8,6 +8,10 @@ def genThumb(src):
 	"""
 	경로를 입력받으면 썸네일을 만든다.
 	"""
+	if not os.path.exists(src):
+		return "","파일이 존재하지 않습니다."
+	if not os.path.isfile(src):
+		return "","파일형태가 아닙니다."
 	if not os.path.exists("/usr/bin/convert"):
 		return "", "ImageMagick이 설치되지 않았습니다."
 
